@@ -115,33 +115,48 @@
         <p class="section-intro">Hybrid tactical, cloud, and enterprise secure communications architecture.</p>
       </div>
       <div class="diagram-container">
-        <svg viewBox="0 0 800 450" id="networkSvg" role="img" aria-label="Network architecture diagram">
-          <title>Hybrid Secure Network Architecture</title>
-          <line x1="150" y1="200" x2="350" y2="120" class="link"/>
-          <line x1="150" y1="200" x2="350" y2="280" class="link"/>
-          <line x1="350" y1="120" x2="650" y2="200" class="link"/>
-          <line x1="350" y1="280" x2="650" y2="200" class="link"/>
+<svg viewBox="0 0 900 520" role="img" aria-label="Mission-ready hybrid network architecture">
+  <title>Mission-Ready Hybrid Network Architecture</title>
 
-          <g class="node" data-info="Tactical Edge: MANET, MPU5, Silvus, RF Links">
-            <circle cx="150" cy="200" r="40"/>
-            <text x="150" y="205">Tactical</text>
-          </g>
+  <!-- Tactical Edge -->
+  <rect x="40" y="60" width="240" height="120" rx="16" class="zone"/>
+  <text x="160" y="85" class="zone-title">Tactical Edge</text>
+  <text x="160" y="110" class="zone-text">MANET · MPU5 · Silvus</text>
+  <text x="160" y="130" class="zone-text">UAS · Sensors · ATAK</text>
+  <text x="160" y="150" class="zone-text">LOS / RF Mesh</text>
 
-          <g class="node" data-info="TAK Hub: CoT routing, federation, containerized services">
-            <circle cx="350" cy="120" r="40"/>
-            <text x="350" y="125">TAK</text>
-          </g>
+  <!-- Transport Layer -->
+  <rect x="330" y="60" width="240" height="120" rx="16" class="zone"/>
+  <text x="450" y="85" class="zone-title">Transport Layer</text>
+  <text x="450" y="110" class="zone-text">SD-WAN · SATCOM</text>
+  <text x="450" y="130" class="zone-text">BLOS / Hybrid IP</text>
+  <text x="450" y="150" class="zone-text">IPsec / Overlay</text>
 
-          <g class="node" data-info="Secure Services: RBAC, encryption, logging, Zero Trust">
-            <circle cx="350" cy="280" r="40"/>
-            <text x="350" y="285">ZTNA</text>
-          </g>
+  <!-- Control & Security -->
+  <rect x="330" y="230" width="240" height="140" rx="16" class="zone-secure"/>
+  <text x="450" y="255" class="zone-title">Control & Security Plane</text>
+  <text x="450" y="280" class="zone-text">TAK Federation</text>
+  <text x="450" y="300" class="zone-text">CoT Routing</text>
+  <text x="450" y="320" class="zone-text">ZTNA · RBAC · Logging</text>
 
-          <g class="node" data-info="Cloud / Enterprise: AWS, Proxmox, analytics, FMV">
-            <circle cx="650" cy="200" r="40"/>
-            <text x="650" y="205">Cloud</text>
-          </g>
-        </svg>
+  <!-- Cloud / Enterprise -->
+  <rect x="620" y="230" width="240" height="140" rx="16" class="zone"/>
+  <text x="740" y="255" class="zone-title">Cloud / Enterprise</text>
+  <text x="740" y="280" class="zone-text">AWS · Proxmox</text>
+  <text x="740" y="300" class="zone-text">Analytics · FMV</text>
+  <text x="740" y="320" class="zone-text">AI / Data Fusion</text>
+
+  <!-- Links -->
+  <line x1="280" y1="120" x2="330" y2="120" class="link"/>
+  <line x1="450" y1="180" x2="450" y2="230" class="link"/>
+  <line x1="570" y1="300" x2="620" y2="300" class="link"/>
+
+  <!-- Flow Labels -->
+  <text x="305" y="105" class="flow-label">CoT · FMV</text>
+  <text x="465" y="210" class="flow-label">Encrypted C2</text>
+  <text x="585" y="285" class="flow-label">Telemetry · AI</text>
+</svg>
+
 
         <div id="diagramInfo" class="card">
           <h3>Architecture Details</h3>
