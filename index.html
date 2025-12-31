@@ -119,32 +119,40 @@
   <title>Mission-Ready Hybrid Network Architecture</title>
 
   <!-- Tactical Edge -->
-  <rect x="40" y="60" width="240" height="120" rx="16" class="zone"/>
-  <text x="160" y="85" class="zone-title">Tactical Edge</text>
-  <text x="160" y="110" class="zone-text">MANET · MPU5 · Silvus</text>
-  <text x="160" y="130" class="zone-text">UAS · Sensors · ATAK</text>
-  <text x="160" y="150" class="zone-text">LOS / RF Mesh</text>
+  <g class="node" data-info="Edge teams operate on resilient RF mesh with MANET radios, ATAK clients, and ISR sensors for rapid situational awareness." tabindex="0" role="button" aria-label="Tactical Edge details">
+    <rect x="40" y="60" width="240" height="120" rx="16" class="zone"/>
+    <text x="160" y="85" class="zone-title">Tactical Edge</text>
+    <text x="160" y="110" class="zone-text">MANET · MPU5 · Silvus</text>
+    <text x="160" y="130" class="zone-text">UAS · Sensors · ATAK</text>
+    <text x="160" y="150" class="zone-text">LOS / RF Mesh</text>
+  </g>
 
   <!-- Transport Layer -->
-  <rect x="330" y="60" width="240" height="120" rx="16" class="zone"/>
-  <text x="450" y="85" class="zone-title">Transport Layer</text>
-  <text x="450" y="110" class="zone-text">SD-WAN · SATCOM</text>
-  <text x="450" y="130" class="zone-text">BLOS / Hybrid IP</text>
-  <text x="450" y="150" class="zone-text">IPsec / Overlay</text>
+  <g class="node" data-info="SD-WAN and SATCOM provide redundant BLOS transport with encrypted IP overlays and policy-based routing across theaters." tabindex="0" role="button" aria-label="Transport Layer details">
+    <rect x="330" y="60" width="240" height="120" rx="16" class="zone"/>
+    <text x="450" y="85" class="zone-title">Transport Layer</text>
+    <text x="450" y="110" class="zone-text">SD-WAN · SATCOM</text>
+    <text x="450" y="130" class="zone-text">BLOS / Hybrid IP</text>
+    <text x="450" y="150" class="zone-text">IPsec / Overlay</text>
+  </g>
 
   <!-- Control & Security -->
-  <rect x="330" y="230" width="240" height="140" rx="16" class="zone-secure"/>
-  <text x="450" y="255" class="zone-title">Control & Security Plane</text>
-  <text x="450" y="280" class="zone-text">TAK Federation</text>
-  <text x="450" y="300" class="zone-text">CoT Routing</text>
-  <text x="450" y="320" class="zone-text">ZTNA · RBAC · Logging</text>
+  <g class="node" data-info="TAK federation, CoT routing, and Zero Trust controls enforce identity-driven access with continuous logging and audit trails." tabindex="0" role="button" aria-label="Control and Security Plane details">
+    <rect x="330" y="230" width="240" height="140" rx="16" class="zone-secure"/>
+    <text x="450" y="255" class="zone-title">Control & Security Plane</text>
+    <text x="450" y="280" class="zone-text">TAK Federation</text>
+    <text x="450" y="300" class="zone-text">CoT Routing</text>
+    <text x="450" y="320" class="zone-text">ZTNA · RBAC · Logging</text>
+  </g>
 
   <!-- Cloud / Enterprise -->
-  <rect x="620" y="230" width="240" height="140" rx="16" class="zone"/>
-  <text x="740" y="255" class="zone-title">Cloud / Enterprise</text>
-  <text x="740" y="280" class="zone-text">AWS · Proxmox</text>
-  <text x="740" y="300" class="zone-text">Analytics · FMV</text>
-  <text x="740" y="320" class="zone-text">AI / Data Fusion</text>
+  <g class="node" data-info="Cloud and enterprise hubs aggregate telemetry, analytics, and FMV for AI-driven fusion and mission reporting." tabindex="0" role="button" aria-label="Cloud and Enterprise details">
+    <rect x="620" y="230" width="240" height="140" rx="16" class="zone"/>
+    <text x="740" y="255" class="zone-title">Cloud / Enterprise</text>
+    <text x="740" y="280" class="zone-text">AWS · Proxmox</text>
+    <text x="740" y="300" class="zone-text">Analytics · FMV</text>
+    <text x="740" y="320" class="zone-text">AI / Data Fusion</text>
+  </g>
 
   <!-- Links -->
   <line x1="280" y1="120" x2="330" y2="120" class="link"/>
