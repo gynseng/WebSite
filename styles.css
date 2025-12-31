@@ -256,27 +256,22 @@ textarea {
 }
 
 svg {
-  max-width: 520px;
+  max-width: 700px;
   width: 100%;
 }
 
-.node circle {
-  fill: #0b1220;
-  stroke: var(--accent);
-  stroke-width: 2;
+.node {
   cursor: pointer;
-  transition: all 0.3s ease;
 }
 
-.node text {
-  fill: var(--text);
-  text-anchor: middle;
-  font-size: 12px;
-  pointer-events: none;
+.node:focus {
+  outline: none;
 }
 
-.node:hover circle {
-  fill: var(--accent);
+.node:hover .zone,
+.node:focus .zone,
+.node:hover .zone-secure,
+.node:focus .zone-secure {
   stroke: var(--accent-strong);
 }
 
@@ -322,19 +317,19 @@ svg {
 
 .zone-title {
   fill: var(--accent);
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 600;
   text-anchor: middle;
 }
 
 .zone-text {
   fill: var(--text);
-  font-size: 12px;
+  font-size: 14px;
   text-anchor: middle;
 }
 
 .flow-label {
   fill: var(--muted);
-  font-size: 11px;
+  font-size: 12px;
   text-anchor: middle;
 }
