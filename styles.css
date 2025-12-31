@@ -1,0 +1,45 @@
+body {
+  font-family: system-ui, sans-serif;
+  background: #0d1117;
+  color: #c9d1d9;
+  margin: 0;
+}
+
+header {
+  padding: 2rem;
+  text-align: center;
+  background: #161b22;
+}
+
+nav a {
+  color: #58a6ff;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+section {
+  padding: 3rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+h2 {
+  color: #58a6ff;
+}
+
+.btn, button {
+  background: #238636;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  cursor: pointer;
+}
+
+input, textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  background: #161b22;
+  color: #c9d1d9;
+  border: 1px solid #30363d;
+}
