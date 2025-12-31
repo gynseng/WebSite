@@ -39,6 +39,52 @@
   </ul>
 </section>
 
+<section id="network-diagram">
+  <h2>Interactive Network Architecture</h2>
+  <p class="diagram-subtitle">
+    Hybrid Tactical, Cloud, and Enterprise Secure Communications Architecture
+  </p>
+
+  <div class="diagram-container">
+    <svg viewBox="0 0 800 450" id="networkSvg">
+
+      <!-- Connections -->
+      <line x1="150" y1="200" x2="350" y2="120" class="link"/>
+      <line x1="150" y1="200" x2="350" y2="280" class="link"/>
+      <line x1="350" y1="120" x2="650" y2="200" class="link"/>
+      <line x1="350" y1="280" x2="650" y2="200" class="link"/>
+
+      <!-- Nodes -->
+      <g class="node" data-info="Tactical Edge: MANET, MPU5, Silvus, RF Links">
+        <circle cx="150" cy="200" r="40"/>
+        <text x="150" y="205">Tactical</text>
+      </g>
+
+      <g class="node" data-info="TAK Hub: CoT routing, federation, containerized services">
+        <circle cx="350" cy="120" r="40"/>
+        <text x="350" y="125">TAK</text>
+      </g>
+
+      <g class="node" data-info="Secure Services: RBAC, encryption, logging, Zero Trust">
+        <circle cx="350" cy="280" r="40"/>
+        <text x="350" y="285">ZTNA</text>
+      </g>
+
+      <g class="node" data-info="Cloud / Enterprise: AWS, Proxmox, analytics, FMV">
+        <circle cx="650" cy="200" r="40"/>
+        <text x="650" y="205">Cloud</text>
+      </g>
+
+    </svg>
+
+    <div id="diagramInfo">
+      <h3>Architecture Details</h3>
+      <p>Hover or tap a node to view technical details.</p>
+    </div>
+  </div>
+</section>
+
+  
 <section id="projects">
   <h2>Projects</h2>
   <article>
