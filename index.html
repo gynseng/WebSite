@@ -1,325 +1,1289 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ot Moya Vidal | Senior Network Engineer</title>
-  <meta name="description" content="Portfolio of Ot Moya Vidal, a Senior Network Engineer specializing in secure, tactical, and cloud-based communication systems." />
-  <meta name="keywords" content="Network Engineer, Secure Communications, Tactical Networks, AWS, Zero Trust, TAK, MANET, SATCOM" />
-  <meta name="author" content="Ot Moya Vidal" />
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moya Integration Group | Enterprise Network & Communications Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0d14;
+            --bg-secondary: #11151f;
+            --bg-tertiary: #181d29;
+            --accent-primary: #ff4500;
+            --accent-secondary: #ff6b35;
+            --accent-dark: #cc3700;
+            --text-primary: #f0f4f8;
+            --text-secondary: #b8c5d6;
+            --text-muted: #7a8a9e;
+            --border-color: rgba(255, 69, 0, 0.15);
+            --glow-orange: rgba(255, 69, 0, 0.4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        /* Grid Background */
+        .grid-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(255, 69, 0, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 69, 0, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(10, 13, 20, 0.95);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(10, 13, 20, 0.98);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-accent {
+            color: var(--accent-primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            padding: 0.7rem 1.8rem;
+            background: var(--accent-primary);
+            color: white;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 2px;
+        }
+
+        .nav-cta:hover {
+            background: var(--accent-dark);
+            box-shadow: 0 4px 20px var(--glow-orange);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 2.5rem;
+            margin-top: 80px;
+            z-index: 2;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, rgba(255, 69, 0, 0.08), transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.6rem 1.5rem;
+            background: rgba(255, 69, 0, 0.1);
+            border: 1px solid var(--accent-primary);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-primary);
+            margin-bottom: 2rem;
+            font-weight: 600;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 1.8rem;
+            color: var(--text-primary);
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .hero h1 .highlight {
+            color: var(--accent-primary);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.35rem);
+            color: var(--text-secondary);
+            max-width: 750px;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+            font-weight: 400;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.8s both;
+        }
+
+        .btn {
+            padding: 1.1rem 2.8rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 2px;
+        }
+
+        .btn-primary {
+            background: var(--accent-primary);
+            color: white;
+            box-shadow: 0 4px 20px rgba(255, 69, 0, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 30px var(--glow-orange);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--text-secondary);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--text-primary);
+            transform: translateY(-3px);
+        }
+
+        /* Stats Section */
+        .stats {
+            position: relative;
+            padding: 5rem 2.5rem;
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 2;
+        }
+
+        .stats-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 4rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--accent-primary);
+            margin-bottom: 0.8rem;
+            line-height: 1;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        /* Section Styles */
+        .section {
+            position: relative;
+            padding: 8rem 2.5rem;
+            z-index: 2;
+        }
+
+        .section-header {
+            max-width: 1400px;
+            margin: 0 auto 5rem;
+            text-align: center;
+        }
+
+        .section-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent-primary);
+            margin-bottom: 1.2rem;
+            font-weight: 700;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .section-description {
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+
+        /* Capabilities Section */
+        .capabilities {
+            background: var(--bg-secondary);
+        }
+
+        .capabilities-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .capability-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .capability-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .capability-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        .capability-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .capability-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        .capability-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            color: var(--text-primary);
+        }
+
+        .capability-card p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 0.98rem;
+        }
+
+        /* Portfolio Section */
+        .portfolio-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            gap: 2.5rem;
+        }
+
+        .portfolio-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            padding: 3.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .portfolio-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(255, 69, 0, 0.08), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .portfolio-card:hover {
+            border-color: var(--accent-primary);
+        }
+
+        .portfolio-card:hover::after {
+            opacity: 1;
+        }
+
+        .portfolio-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1.8rem;
+            gap: 2rem;
+        }
+
+        .portfolio-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-tag {
+            padding: 0.4rem 1rem;
+            background: rgba(255, 69, 0, 0.15);
+            border: 1px solid var(--accent-primary);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-primary);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .portfolio-card p {
+            color: var(--text-secondary);
+            line-height: 1.9;
+            margin-bottom: 2rem;
+            font-size: 1.02rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .tech-item {
+            padding: 0.5rem 1.2rem;
+            background: rgba(255, 107, 53, 0.1);
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            font-size: 0.85rem;
+            color: var(--accent-secondary);
+            font-weight: 500;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--bg-secondary);
+        }
+
+        .about-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 4rem;
+        }
+
+        .about-text {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .about-text h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .about-text p {
+            color: var(--text-secondary);
+            line-height: 1.9;
+            font-size: 1.05rem;
+        }
+
+        .credentials {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            padding: 3rem;
+        }
+
+        .credentials h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 2rem;
+        }
+
+        .credential-item {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .credential-item:last-child {
+            border-bottom: none;
+        }
+
+        .credential-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .credential-value {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            padding: 4.5rem;
+            position: relative;
+        }
+
+        .contact-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.8rem;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 1.1rem;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 0.98rem;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(255, 69, 0, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 160px;
+        }
+
+        select {
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            position: relative;
+            padding: 4rem 2.5rem;
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            z-index: 2;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-section h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-primary);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .clearance-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1rem;
+            background: rgba(255, 69, 0, 0.1);
+            border: 1px solid var(--accent-primary);
+            color: var(--accent-primary);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-brand {
+                grid-column: 1 / -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                margin-top: 100px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+
+            .capabilities-grid,
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-container {
+                padding: 2.5rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <div class="header-inner">
-      <div>
-        <p class="eyebrow">Senior Network Engineer</p>
-        <h1>Ot Moya Vidal</h1>
-        <p class="subtitle">Secure & Tactical Systems · Hybrid Cloud · Mission-Ready Infrastructure</p>
-      </div>
-      <div class="header-actions">
-        <a class="btn" href="#contact">Network with Me</a>
-        <a class="btn btn-outline" href="#projects">View Projects</a>
-      </div>
-    </div>
-    <nav aria-label="Primary">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#resume">Resume</a>
-      <a href="#contact">Contact</a>
+    <!-- Grid Background -->
+    <div class="grid-background"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-accent">MOYA</span> INTEGRATION GROUP
+            </div>
+            <ul class="nav-links">
+                <li><a href="#capabilities">Capabilities</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact" class="nav-cta">Request Consultation</a></li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
     </nav>
-  </header>
 
-  <main id="main">
-    <section id="about" class="section">
-      <div class="section-header">
-        <h2>About Me</h2>
-        <p class="section-intro">
-          Results-driven Senior Network Engineer with 10+ years of experience designing, securing, and deploying resilient
-          infrastructure across enterprise, hybrid cloud, and tactical environments.
-        </p>
-      </div>
-      <div class="about-grid">
-        <div class="card">
-          <h3>Professional Bio</h3>
-          <p>
-            Cleared for sensitive projects (Top Secret), I specialize in integrating emerging technologies into multi-domain
-            systems that enable secure communication, real-time data exchange, and mission readiness under pressure. My
-            background spans vulnerability analysis, system hardening, and cybersecurity investigations, with hands-on
-            leadership across joint operations and complex field deployments.
-          </p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-label">
+                <span>●</span> TOP SECRET CLEARED
+            </div>
+            <h1>
+                Mission-Critical Network<br>
+                <span class="highlight">& Communications Integration</span>
+            </h1>
+            <p class="hero-subtitle">
+                Two decades of proven excellence delivering secure, resilient network infrastructure 
+                for defense and enterprise operations. Trusted expertise in tactical communications, 
+                cybersecurity, and multi-domain integration for the most demanding environments.
+            </p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Request Consultation</a>
+                <a href="#portfolio" class="btn btn-secondary">View Portfolio</a>
+            </div>
         </div>
-        <div class="card">
-          <h3>Core Focus</h3>
-          <ul>
-            <li>Secure and tactical communications across RF/Data/C2 domains</li>
-            <li>Hybrid cloud design (AWS + on-premises) and Zero Trust adoption</li>
-            <li>Operational readiness, team mentorship, and rapid deployment support</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Location</h3>
-          <p>Indianapolis, IN</p>
-        </div>
-      </div>
     </section>
 
-    <section id="skills" class="section alt-section">
-      <div class="section-header">
-        <h2>Skills</h2>
-        <p class="section-intro">Technical depth across network engineering, cybersecurity, and tactical systems.</p>
-      </div>
-      <div class="skills-grid">
-        <div class="card">
-          <h3>Core Technical Skills</h3>
-          <ul>
-            <li>Network Design, Deployment & Optimization</li>
-            <li>Secure Communications, Encryption & Zero Trust</li>
-            <li>Cloud Infrastructure (AWS, Hybrid)</li>
-            <li>System Hardening & Vulnerability Management</li>
-          </ul>
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">20+</div>
+                <div class="stat-label">Years of Experience</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">1,600+</div>
+                <div class="stat-label">Users Supported</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">70+</div>
+                <div class="stat-label">Systems Integrated</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">$15M+</div>
+                <div class="stat-label">Equipment Managed</div>
+            </div>
         </div>
-        <div class="card">
-          <h3>Systems & Tools</h3>
-          <ul>
-            <li>Linux, Unix, Proxmox, VMware, Containerization</li>
-            <li>Wireshark, Nmap, firewall orchestration</li>
-            <li>TAK, MUSIC, MPU5, Silvus, MANET, SATCOM</li>
-            <li>Git/GitHub, automation, monitoring</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Programming & AI</h3>
-          <ul>
-            <li>C, C++, Python, SQL, ARM Assembly</li>
-            <li>TensorFlow, PyTorch for detection systems</li>
-            <li>Data preparation & model optimization for FMV</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Languages</h3>
-          <ul>
-            <li>English (Proficient)</li>
-            <li>Spanish (Native)</li>
-            <li>Catala (Native)</li>
-          </ul>
-        </div>
-      </div>
     </section>
 
-    <section id="network-diagram" class="section">
-      <div class="section-header">
-        <h2>Network Architecture Snapshot</h2>
-        <p class="section-intro">Hybrid tactical, cloud, and enterprise secure communications architecture.</p>
-      </div>
-      <div class="diagram-container">
-<svg viewBox="0 0 1000 600" role="img" aria-label="Mission-ready hybrid network architecture">
-  <title>Mission-Ready Hybrid Network Architecture</title>
-
-  <!-- Tactical Edge -->
-  <g class="node" data-info="Edge teams operate on resilient RF mesh with MANET radios, ATAK clients, and ISR sensors for rapid situational awareness." tabindex="0" role="button" aria-label="Tactical Edge details">
-    <rect x="40" y="60" width="240" height="120" rx="16" class="zone"/>
-    <text x="160" y="85" class="zone-title">Tactical Edge</text>
-    <text x="160" y="110" class="zone-text">MANET · MPU5 · Silvus</text>
-    <text x="160" y="130" class="zone-text">UAS · Sensors · ATAK</text>
-    <text x="160" y="150" class="zone-text">LOS / RF Mesh</text>
-  </g>
-
-  <!-- Transport Layer -->
-  <g class="node" data-info="SD-WAN and SATCOM provide redundant BLOS transport with encrypted IP overlays and policy-based routing across theaters." tabindex="0" role="button" aria-label="Transport Layer details">
-    <rect x="330" y="60" width="240" height="120" rx="16" class="zone"/>
-    <text x="450" y="85" class="zone-title">Transport Layer</text>
-    <text x="450" y="110" class="zone-text">SD-WAN · SATCOM</text>
-    <text x="450" y="130" class="zone-text">BLOS / Hybrid IP</text>
-    <text x="450" y="150" class="zone-text">IPsec / Overlay</text>
-  </g>
-
-  <!-- Control & Security -->
-  <g class="node" data-info="TAK federation, CoT routing, and Zero Trust controls enforce identity-driven access with continuous logging and audit trails." tabindex="0" role="button" aria-label="Control and Security Plane details">
-    <rect x="330" y="230" width="240" height="140" rx="16" class="zone-secure"/>
-    <text x="450" y="255" class="zone-title">Control & Security Plane</text>
-    <text x="450" y="280" class="zone-text">TAK Federation</text>
-    <text x="450" y="300" class="zone-text">CoT Routing</text>
-    <text x="450" y="320" class="zone-text">ZTNA · RBAC · Logging</text>
-  </g>
-
-  <!-- Cloud / Enterprise -->
-  <g class="node" data-info="Cloud and enterprise hubs aggregate telemetry, analytics, and FMV for AI-driven fusion and mission reporting." tabindex="0" role="button" aria-label="Cloud and Enterprise details">
-    <rect x="620" y="230" width="240" height="140" rx="16" class="zone"/>
-    <text x="740" y="255" class="zone-title">Cloud / Enterprise</text>
-    <text x="740" y="280" class="zone-text">AWS · Proxmox</text>
-    <text x="740" y="300" class="zone-text">Analytics · FMV</text>
-    <text x="740" y="320" class="zone-text">AI / Data Fusion</text>
-  </g>
-
-  <!-- Links -->
-  <line x1="320" y1="130" x2="360" y2="130" class="link"/>
-  <line x1="500" y1="200" x2="500" y2="250" class="link"/>
-  <line x1="640" y1="335" x2="680" y2="335" class="link"/>
-
-  <!-- Flow Labels -->
-  <text x="340" y="115" class="flow-label">CoT · FMV</text>
-  <text x="515" y="235" class="flow-label">Encrypted C2</text>
-  <text x="660" y="320" class="flow-label">Telemetry · AI</text>
-</svg>
-
-
-        <div id="diagramInfo" class="card">
-          <h3>Architecture Details</h3>
-          <p>Hover or tap a node to view technical details.</p>
+    <!-- Capabilities Section -->
+    <section id="capabilities" class="section capabilities">
+        <div class="section-header">
+            <div class="section-label">CORE CAPABILITIES</div>
+            <h2 class="section-title">Enterprise-Grade Solutions</h2>
+            <p class="section-description">
+                Comprehensive network and communications services engineered for reliability, 
+                security, and seamless integration across all operational domains.
+            </p>
         </div>
-      </div>
+        <div class="capabilities-grid">
+            <div class="capability-card">
+                <div class="capability-number">01</div>
+                <h3>Network Architecture & Deployment</h3>
+                <p>
+                    Design and implementation of resilient network infrastructure supporting enterprise 
+                    and tactical environments. Proven scalability for 1,600+ concurrent users with 
+                    high availability and redundancy across distributed operations.
+                </p>
+            </div>
+            <div class="capability-card">
+                <div class="capability-number">02</div>
+                <h3>Secure Communications Integration</h3>
+                <p>
+                    Integration of SATCOM, MANET, and IP mesh technologies with Type 1 encryption 
+                    and IPsec layering for global LOS/BLOS connectivity. Ensuring secure, reliable 
+                    communication channels for mission-critical operations.
+                </p>
+            </div>
+            <div class="capability-card">
+                <div class="capability-number">03</div>
+                <h3>Hybrid Cloud Infrastructure</h3>
+                <p>
+                    Seamless AWS and on-premise infrastructure integration utilizing containerized 
+                    environments with Proxmox, VMware, and advanced orchestration technologies 
+                    for optimal performance and flexibility.
+                </p>
+            </div>
+            <div class="capability-card">
+                <div class="capability-number">04</div>
+                <h3>Cybersecurity & System Hardening</h3>
+                <p>
+                    Comprehensive vulnerability analysis, Zero Trust Network Access (ZTNA) implementation, 
+                    and continuous security monitoring. Ensuring compliance and protection for sensitive 
+                    assets and mission-critical systems.
+                </p>
+            </div>
+            <div class="capability-card">
+                <div class="capability-number">05</div>
+                <h3>Multi-Domain Operations</h3>
+                <p>
+                    RF, data, and C2 system integration enabling real-time situational awareness 
+                    and interoperability across air, ground, and network domains. Facilitating 
+                    coordinated operations in complex environments.
+                </p>
+            </div>
+            <div class="capability-card">
+                <div class="capability-number">06</div>
+                <h3>AI/ML Implementation</h3>
+                <p>
+                    Computer vision and neural network development utilizing TensorFlow and PyTorch 
+                    for detection systems and autonomous operations. Applied machine learning for 
+                    enhanced operational capabilities and decision support.
+                </p>
+            </div>
+        </div>
     </section>
 
-    <section id="projects" class="section alt-section">
-      <div class="section-header">
-        <h2>Projects</h2>
-        <p class="section-intro">Selected initiatives with measurable outcomes across defense, cloud, and AI systems.</p>
-      </div>
-      <div class="project-grid">
-        <article class="card">
-          <h3>TAK Multinational Integration</h3>
-          <p>
-            Architected a containerized TAK backbone supporting 16+ partner systems, integrating ISR, radio, sensor, and C2
-            technologies into a unified fusion engine with federated TAK Hub support.
-          </p>
-          <p class="project-outcome">Outcome: Real-time CoT routing and shared situational awareness across ATAK, WinTAK, and iTAK clients.</p>
-        </article>
-        <article class="card">
-          <h3>AI Drone Detection (YOLO + TensorFlow)</h3>
-          <p>
-            Developed a YOLO-based neural network for real-time detection of small UAS in cluttered FMV streams. Led data
-            preparation, model training, and performance tuning.
-          </p>
-          <p class="project-outcome">Outcome: Reliable target identification in dynamic scenarios, validating real-time aerial threat monitoring.</p>
-        </article>
-        <article class="card">
-          <h3>Zero Trust Tactical Deployment</h3>
-          <p>
-            Integrated and validated 70+ technologies during a first-time Zero Trust Network Access deployment for a
-            coalition environment.
-          </p>
-          <p class="project-outcome">Outcome: Secure interoperability for 1,600+ users with pre-connection security posture validation.</p>
-        </article>
-        <article class="card">
-          <h3>Secure Transaction Engine with RBAC</h3>
-          <p>
-            Designed and deployed a containerized transaction system featuring dynamic RBAC, encryption in transit/at rest,
-            and comprehensive audit logging.
-          </p>
-          <p class="project-outcome">Outcome: Exceeded security and performance requirements in real-world deployment scenarios.</p>
-        </article>
-        <article class="card">
-          <h3>Automated EV Charging Station</h3>
-          <p>
-            Led software and hardware integration for an AI-assisted robotic EV charging system using Arduino, Raspberry Pi,
-            computer vision, and sensor fusion.
-          </p>
-          <p class="project-outcome">Outcome: Achieved 100% automation objectives with a fully functional prototype.</p>
-        </article>
-        <article class="card">
-          <h3>Air Communication System Integration</h3>
-          <p>
-            Implemented hybrid LOS/BLOS connectivity for UAS platforms using SATCOM, SD-WAN, MANET, and IP mesh radios with
-            IPsec layered over Type 1 cryptography.
-          </p>
-          <p class="project-outcome">Outcome: Reduced latency and improved global interoperability for FMV and GCS data feeds.</p>
-        </article>
-        <article class="card">
-          <h3>Edge Interoperability Gateway (EIG)</h3>
-          <p>
-            Architected a modular edge gateway enabling real-time interoperability between heterogeneous tactical and IoT systems. Implemented protocol translation and data normalization across OMNi, MAVLink, and sensor telemetry streams into Cursor-on-Target (CoT) for TAK ecosystems, operating in bandwidth-constrained and intermittently connected environments.
-          </p>
-          <p class="project-outcome">Outcome: Enabled secure, low-latency situational awareness sharing across non-native platforms, reducing cross-system integration timelines from weeks to hours while maintaining operational and security constraints.</p>
-        </article>
-      </div>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section">
+        <div class="section-header">
+            <div class="section-label">PORTFOLIO</div>
+            <h2 class="section-title">Proven Track Record</h2>
+            <p class="section-description">
+                Real-world implementations demonstrating technical excellence and measurable operational impact.
+            </p>
+        </div>
+        <div class="portfolio-grid">
+            <div class="portfolio-card">
+                <div class="portfolio-header">
+                    <div>
+                        <h3>AI-Powered Drone Detection System</h3>
+                    </div>
+                    <div class="portfolio-tag">AI/ML</div>
+                </div>
+                <p>
+                    Developed and trained YOLO-based neural network model using TensorFlow to perform 
+                    real-time detection of small drone systems within full-motion video streams in 
+                    cluttered environments. The system successfully demonstrated reliable target 
+                    identification in dynamic and complex visual scenarios, validating its potential 
+                    for real-time aerial threat monitoring.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-item">TensorFlow</span>
+                    <span class="tech-item">YOLO Neural Network</span>
+                    <span class="tech-item">Python</span>
+                    <span class="tech-item">Computer Vision</span>
+                    <span class="tech-item">FMV Processing</span>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="portfolio-header">
+                    <div>
+                        <h3>Multinational TAK Server Integration</h3>
+                    </div>
+                    <div class="portfolio-tag">C2 SYSTEMS</div>
+                </div>
+                <p>
+                    Served as Lead Communications Engineer responsible for designing and deploying 
+                    the backbone network and communications infrastructure for a multinational live 
+                    exercise. Architected containerized environment using Proxmox to host traffic 
+                    repeaters and data distribution services. Successfully integrated over 16 distinct 
+                    systems from multiple partner nations into a unified fusion engine, enhancing 
+                    situational awareness and operational interoperability.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-item">Proxmox</span>
+                    <span class="tech-item">TAK Server</span>
+                    <span class="tech-item">Containerization</span>
+                    <span class="tech-item">CoT Data Routing</span>
+                    <span class="tech-item">Federated Hub</span>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="portfolio-header">
+                    <div>
+                        <h3>UAS Global Communications Platform</h3>
+                    </div>
+                    <div class="portfolio-tag">AVIATION</div>
+                </div>
+                <p>
+                    Led integration of advanced communication systems for UAS platforms, enabling 
+                    global Line-of-Sight and Beyond-Line-of-Sight connectivity using SATCOM, SD-WAN, 
+                    MANET, and IP mesh radios. Deployed hybrid software-hardware architecture to 
+                    securely transmit Full Motion Video, Ground Control Station data, and mission-critical 
+                    payloads. Enhanced airborne interoperability, reduced latency, and supported 
+                    real-time situational awareness across distributed operations.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-item">SATCOM</span>
+                    <span class="tech-item">SD-WAN</span>
+                    <span class="tech-item">MANET</span>
+                    <span class="tech-item">IPsec</span>
+                    <span class="tech-item">Type 1 Encryption</span>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="portfolio-header">
+                    <div>
+                        <h3>Zero Trust Network Access Deployment</h3>
+                    </div>
+                    <div class="portfolio-tag">CYBERSECURITY</div>
+                </div>
+                <p>
+                    Successfully integrated and validated over 70 disparate technologies during first-time 
+                    operational deployment of Zero Trust Network Access environment. Implemented pre-connection 
+                    security posture validation to ensure all participating systems met vulnerability and 
+                    compliance requirements prior to network admission. Enforced secure interoperability 
+                    and access controls across all participants.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-item">Zero Trust Architecture</span>
+                    <span class="tech-item">Security Validation</span>
+                    <span class="tech-item">Access Control</span>
+                    <span class="tech-item">Compliance Management</span>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="portfolio-header">
+                    <div>
+                        <h3>Secure Transaction Processing Engine</h3>
+                    </div>
+                    <div class="portfolio-tag">FINTECH</div>
+                </div>
+                <p>
+                    Designed and deployed secure, containerized transaction management system for 
+                    processing financial operations and database records. Featured robust role-based 
+                    access control with dynamic permission assignments. Data integrity and confidentiality 
+                    ensured through end-to-end encryption, secure hashing, and comprehensive audit 
+                    logging. System exceeded performance and security expectations in production deployment.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-item">Docker</span>
+                    <span class="tech-item">RBAC</span>
+                    <span class="tech-item">End-to-End Encryption</span>
+                    <span class="tech-item">SQL</span>
+                    <span class="tech-item">Audit Logging</span>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="resume" class="section">
-      <div class="section-header">
-        <h2>Resume</h2>
-        <p class="section-intro">Leadership across mission-critical environments, cloud infrastructure, and enterprise networks.</p>
-      </div>
-      <div class="resume-grid">
-        <div class="card">
-          <h3>United States Army</h3>
-          <p class="role">TF RAPTR – Lead Network Engineer (Jul 2024 – Present)</p>
-          <ul>
-            <li>Designed, deployed, and maintained secure communications for mission-critical operations.</li>
-            <li>Led multidisciplinary cyber and communications teams as technical authority for experimental integrations.</li>
-            <li>Implemented security posture validation and Zero Trust access controls for coalition networks.</li>
-          </ul>
-          <p class="role">SFAB – Network Infrastructure Specialist (Jul 2023 – Present)</p>
-          <ul>
-            <li>Built and sustained encrypted tactical networks in austere environments.</li>
-            <li>Developed security protocols and signal encryption procedures (SKL).</li>
-          </ul>
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="section-header">
+            <div class="section-label">ABOUT</div>
+            <h2 class="section-title">Engineering Excellence</h2>
+            <p class="section-description">
+                Two decades of specialized expertise in mission-critical network infrastructure and secure communications.
+            </p>
         </div>
-        <div class="card">
-          <h3>Telewebtech</h3>
-          <p class="role">Senior Engineer (May 2015 – Present)</p>
-          <ul>
-            <li>Designed and deployed VoIP systems across cloud and on-premises environments.</li>
-            <li>Configured servers, firewalls, and network devices to boost performance and scalability.</li>
-            <li>Investigated security incidents and implemented protective controls across infrastructure.</li>
-          </ul>
+        <div class="about-content">
+            <div class="about-text">
+                <div>
+                    <h3>Our Mission</h3>
+                    <p>
+                        Moya Integration Group delivers enterprise-grade network and communications solutions 
+                        for organizations operating in the most demanding environments. Our team brings over 
+                        two decades of specialized experience in designing, securing, and deploying resilient 
+                        infrastructure across both enterprise and mission-critical operations.
+                    </p>
+                </div>
+                <div>
+                    <h3>Our Approach</h3>
+                    <p>
+                        We specialize in integrating emerging technologies into hybrid cloud and tactical 
+                        systems, enabling secure communication, real-time data exchange, and multi-domain 
+                        interoperability. Our proven track record includes vulnerability analysis, system 
+                        hardening, and cybersecurity investigations, with hands-on leadership in joint 
+                        operations and complex field deployments.
+                    </p>
+                </div>
+                <div>
+                    <h3>Our Commitment</h3>
+                    <p>
+                        Trusted by defense and enterprise sectors, we are committed to driving innovation, 
+                        mentoring technical teams, and ensuring operational readiness under pressure. Our 
+                        solutions are engineered for reliability, scalability, and security—designed to 
+                        meet the unique challenges of modern network operations.
+                    </p>
+                </div>
+            </div>
+            <div class="credentials">
+                <h4>Key Credentials</h4>
+                <div class="credential-item">
+                    <div class="credential-label">Security Clearance</div>
+                    <div class="credential-value">Top Secret</div>
+                </div>
+                <div class="credential-item">
+                    <div class="credential-label">Experience</div>
+                    <div class="credential-value">20+ Years</div>
+                </div>
+                <div class="credential-item">
+                    <div class="credential-label">Core Technologies</div>
+                    <div class="credential-value">C/C++, Python, TensorFlow, PyTorch</div>
+                </div>
+                <div class="credential-item">
+                    <div class="credential-label">Systems Expertise</div>
+                    <div class="credential-value">Linux, AWS, Proxmox, VMware</div>
+                </div>
+                <div class="credential-item">
+                    <div class="credential-label">Tactical Systems</div>
+                    <div class="credential-value">TAK, MUSIC, MPU5, Silvus</div>
+                </div>
+                <div class="credential-item">
+                    <div class="credential-label">Specializations</div>
+                    <div class="credential-value">Network Architecture, Cybersecurity, C2 Integration</div>
+                </div>
+            </div>
         </div>
-        <div class="card">
-          <h3>Education</h3>
-          <p>Purdue School of Engineering & Technology — BS/MS in Electrical and Computer Engineering (Expected 2026)</p>
-        </div>
-        <div class="card">
-          <h3>Certifications</h3>
-          <ul class="two-column">
-            <li>3CX Advanced Certification </li>
-            <li>SEJPME 1 </li>
-            <li>AWS Cloud Practitioner Essentials </li>
-            <li>AWS Well-Architected </li>
-            <li>CompTIA Security+ </li>
-            <li>MUSIC </li>
-            <li>CompTIA PenTest+ </li>
-            <li>CompTIA CySA+ </li>
-          </ul>
-        </div>
-      </div>
-      <a class="btn" href="#contact">Request Full Resume</a>
     </section>
 
-    <section id="contact" class="section alt-section">
-      <div class="section-header">
-        <h2>Contact</h2>
-        <p class="section-intro">Open to networking opportunities, collaborations, and mission-focused engagements.</p>
-      </div>
-      <div class="contact-grid">
-        <div class="card">
-          <h3>Let’s Connect</h3>
-          <p>
-            Reach out for secure network architecture support, tactical systems integration, or advisory engagements.
-          </p>
-          <p><strong>Location:</strong> Indianapolis, IN</p>
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="section-header">
+            <div class="section-label">CONTACT</div>
+            <h2 class="section-title">Request Consultation</h2>
+            <p class="section-description">
+                Let's discuss how our expertise can enhance your network infrastructure and communications capabilities.
+            </p>
         </div>
-        <form class="card" action="mailto:omv1065@gmail.com" method="post" enctype="text/plain">
-          <label for="name">Name</label>
-          <input id="name" type="text" name="name" placeholder="Your Name" required>
-
-          <label for="email">Email</label>
-          <input id="email" type="email" name="email" placeholder="Your Email" required>
-
-          <label for="message">Message</label>
-          <textarea id="message" name="message" placeholder="Tell me about your networking goals." rows="5" required></textarea>
-
-          <button type="submit">Send Message</button>
-        </form>
-      </div>
+        <div class="contact-container">
+            <form id="contactForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="company">Company / Organization *</label>
+                    <input type="text" id="company" name="company" required>
+                </div>
+                <div class="form-group">
+                    <label for="interest">Area of Interest *</label>
+                    <select id="interest" name="interest" required>
+                        <option value="">Select an option</option>
+                        <option value="network">Network Architecture & Deployment</option>
+                        <option value="communications">Secure Communications</option>
+                        <option value="cloud">Hybrid Cloud Infrastructure</option>
+                        <option value="cybersecurity">Cybersecurity & System Hardening</option>
+                        <option value="multi-domain">Multi-Domain Operations</option>
+                        <option value="ai-ml">AI/ML Implementation</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Project Details *</label>
+                    <textarea id="message" name="message" required placeholder="Please describe your project requirements, timeline, and any specific challenges you're facing..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Request</button>
+            </form>
+        </div>
     </section>
-  </main>
 
-  <footer class="site-footer">
-    <p>© 2025 Ot Moya Vidal. Built for secure, mission-ready networking.</p>
-  </footer>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>MOYA INTEGRATION GROUP</h3>
+                <p>
+                    Two decades of engineering excellence in mission-critical network infrastructure 
+                    and secure communications for defense and enterprise operations.
+                </p>
+                <div class="clearance-badge">● TOP SECRET CLEARED</div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <div class="footer-links">
+                    <a href="#capabilities">Capabilities</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <div class="footer-links">
+                    <a href="#capabilities">Network Architecture</a>
+                    <a href="#capabilities">Secure Communications</a>
+                    <a href="#capabilities">Cybersecurity</a>
+                    <a href="#capabilities">Cloud Infrastructure</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>© 2025 Moya Integration Group. All rights reserved.</div>
+            <div>moyaintegrationgroup.com</div>
+        </div>
+    </footer>
 
-  <script src="assets/js/main.js"></script>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const targetPosition = target.offsetTop - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Add your form submission logic here
+            alert('Thank you for your consultation request. We will contact you shortly.');
+            this.reset();
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn?.addEventListener('click', () => {
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '100%';
+                navLinks.style.left = '0';
+                navLinks.style.right = '0';
+                navLinks.style.background = 'rgba(10, 13, 20, 0.98)';
+                navLinks.style.padding = '2rem';
+                navLinks.style.gap = '1.5rem';
+            }
+        });
+    </script>
 </body>
 </html>
