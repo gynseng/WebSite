@@ -21,3 +21,25 @@ This document provides a compact overview and quick index for the three support 
 
 If you'd like, I can expand each guide's one-line summary into a short paragraph, add direct anchor links to major sections, or generate a single consolidated `README.md` at the repo root that links into this folder. Which would you prefer?
 
+## Centralizing Analytics
+
+If you want a single place to view site performance and user behavior, centralize these data sources: **Google Analytics 4 (GA4)**, **Microsoft Clarity**, **Google Search Console**, and your contact/form submissions (Formspree or CSV exports). For consolidated reporting use **Google Looker Studio** and optionally **BigQuery** for raw event analysis.
+
+- **Quick links (add your real links here):**
+	- GA4 property: `<PASTE_GA4_URL_OR_ID>`
+	- Looker Studio dashboard: `<PASTE_LOOKER_STUDIO_URL>`
+	- Microsoft Clarity: `<PASTE_CLARITY_PROJECT_URL>`
+	- BigQuery project/dataset: `<PASTE_BIGQUERY_URL>`
+
+- **Where to configure in this repo:**
+	- Tracking IDs: `index.html` (replace `GA_MEASUREMENT_ID`, `CLARITY_PROJECT_ID`).
+	- Event definitions: `script.js` (centralize event tracking here).
+	- Documentation & dashboard links: `guides/readme.md` or `guides/ANALYTICS_DASHBOARD.md` (created below).
+
+- **Fast setup (3 steps):**
+	1. Replace tracking placeholders in `index.html` with your real IDs.
+ 2. Confirm events are sent from `script.js` (form submissions, CTA clicks, scroll events).
+ 3. Build or connect a Looker Studio dashboard (GA4 + Search Console + sheet/BigQuery for forms; optional Clarity connector).
+
+
+
