@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Black background -->
+  <rect width="512" height="512" fill="#000000"/>
+  
+  <!-- Outer square border (red-orange) -->
+  <rect x="60" y="60" width="392" height="392" fill="none" stroke="#ff3d00" stroke-width="20"/>
+  
+  <!-- Inner square -->
+  <rect x="150" y="150" width="212" height="212" fill="none" stroke="#ff3d00" stroke-width="15"/>
+  
+  <!-- Center dot -->
+  <circle cx="256" cy="256" r="40" fill="#ff3d00"/>
+  
+  <!-- Corner brackets - Top Left -->
+  <path d="M 80 120 L 80 80 L 120 80" fill="none" stroke="#ff6e40" stroke-width="12" stroke-linecap="square"/>
+  
+  <!-- Corner brackets - Top Right -->
+  <path d="M 392 80 L 432 80 L 432 120" fill="none" stroke="#ff6e40" stroke-width="12" stroke-linecap="square"/>
+  
+  <!-- Corner brackets - Bottom Left -->
+  <path d="M 80 392 L 80 432 L 120 432" fill="none" stroke="#ff6e40" stroke-width="12" stroke-linecap="square"/>
+  
+  <!-- Corner brackets - Bottom Right -->
+  <path d="M 432 392 L 432 432 L 392 432" fill="none" stroke="#ff6e40" stroke-width="12" stroke-linecap="square"/>
+</svg>
