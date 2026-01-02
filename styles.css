@@ -184,6 +184,8 @@ nav {
     right: 3rem;
     bottom: 50px;
     pointer-events: none;
+    /* keep HUD corners visually behind hero content */
+    z-index: 1;
 }
 
 .corner {
@@ -196,6 +198,7 @@ nav {
     content: '';
     position: absolute;
     background: var(--accent-primary);
+    z-index: 1;
 }
 
 .corner-tl { top: 0; left: 0; }
