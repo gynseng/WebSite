@@ -1,0 +1,27 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://moyaintegrationgroup.com/sitemap.xml
+
+# Block common bot traffic
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: DotBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Disallow: /
+
+# Allow Google, Bing, and other major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
