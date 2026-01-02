@@ -294,6 +294,27 @@ nav {
     line-height: 1.7;
 }
 
+.value-proposition {
+    max-width: 800px;
+    margin-bottom: 3rem;
+}
+
+.mission-statement {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.outcome-focus {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    border-left: 3px solid var(--accent-primary);
+    padding-left: 1.5rem;
+}
+
 .cta-buttons {
     display: flex;
     gap: 1.5rem;
