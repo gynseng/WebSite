@@ -229,16 +229,13 @@ nav {
         top: 72px;
         left: 0.5rem;
         right: 0.5rem;
-        bottom: 20px;
+        /* raise bottom so corner elements don't overlap hero CTAs on narrow screens */
+        bottom: 140px;
     }
 
     .corner {
         width: 28px;
         height: 28px;
-    }
-
-    .corner::before, .corner::after {
-        /* keep stroke thickness, but match new corner size */
     }
 
     .corner-tl::before, .corner-tr::before, .corner-bl::before, .corner-br::before {
@@ -261,7 +258,8 @@ nav {
         top: 64px;
         left: 0.25rem;
         right: 0.25rem;
-        bottom: 12px;
+        /* raise bottom so corner elements don't overlap hero CTAs on extra-small screens */
+        bottom: 180px;
     }
 
     .corner {
