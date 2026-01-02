@@ -214,6 +214,67 @@ nav {
 .corner-br::before { width: 2px; height: 40px; bottom: 0; right: 0; }
 .corner-br::after { width: 40px; height: 2px; bottom: 0; right: 0; }
 
+/* Responsive adjustments for small screens: make HUD corners reach closer to the viewport edges
+   and reduce their size so they remain visually balanced on phones. */
+@media (max-width: 768px) {
+    .hero {
+        padding: 0 1rem;
+        margin-top: 64px;
+    }
+
+    .hero-hud-corners {
+        top: 72px;
+        left: 0.5rem;
+        right: 0.5rem;
+        bottom: 20px;
+    }
+
+    .corner {
+        width: 28px;
+        height: 28px;
+    }
+
+    .corner::before, .corner::after {
+        /* keep stroke thickness, but match new corner size */
+    }
+
+    .corner-tl::before, .corner-tr::before, .corner-bl::before, .corner-br::before {
+        height: 28px;
+    }
+
+    .corner-tl::after, .corner-tr::after, .corner-bl::after, .corner-br::after {
+        width: 28px;
+    }
+}
+
+@media (max-width: 420px) {
+    /* Extra-small phones: bring corners almost to the edges and reduce size further */
+    .hero {
+        padding: 0 0.75rem;
+        margin-top: 56px;
+    }
+
+    .hero-hud-corners {
+        top: 64px;
+        left: 0.25rem;
+        right: 0.25rem;
+        bottom: 12px;
+    }
+
+    .corner {
+        width: 22px;
+        height: 22px;
+    }
+
+    .corner-tl::before, .corner-tr::before, .corner-bl::before, .corner-br::before {
+        height: 22px;
+    }
+
+    .corner-tl::after, .corner-tr::after, .corner-bl::after, .corner-br::after {
+        width: 22px;
+    }
+}
+
 .hero-content {
     max-width: 1600px;
     margin: 0 auto;
